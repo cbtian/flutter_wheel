@@ -17,26 +17,26 @@ For help getting started with Flutter, view our online
 >- [强大的Flutter Http请求开源库-dio](https://www.jianshu.com/p/bd4c2dc5e97f)
 >- [Flutter POST/GET网络请求](https://www.jianshu.com/p/c7e1849676e2)
 
-####banner_view
+#### banner_view
 > 这里实用的是Flutter官方推荐的
 >- [flutter自定义广告Banner](https://blog.csdn.net/a8380381/article/details/84838301)
 >- [BannerView1](https://github.com/yangxiaoweihn/BannerView)
 >- [BannerView2](https://github.com/zhangruiyu/)
   
-####推荐几个学习Flutter的网站
+#### 推荐几个学习Flutter的网站
 - [Futter中文网](https://flutterchina.club/)
 - [Flutter 社区中文资源](https://flutter-io.cn/)
 - [Flutter Packages](https://pub.dartlang.org/flutter/)
 - [Flutter 中文开发者社区开源项目](https://github.com/flutterchina)
 
 
-####个人开源网站
+#### 个人开源网站
 - [Flutter_Wheel](https://github.com/cbtian/flutter_wheel)
 
-####机型适配
+#### 机型适配
 [flutter_screenutil](https://github.com/OpenFlutter/flutter_ScreenUtil)
 
-####细节优化 
+#### 细节优化 
 - 沉浸式状态栏的实现
 ````
  if(Platform.isAndroid){//沉浸式状态栏
