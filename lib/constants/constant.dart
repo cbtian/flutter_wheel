@@ -7,7 +7,7 @@ class TabConfig{
   /**
    * //底部title
    */
-  static const HOME_TAB_TITLES = const ["首页", "分类", "书架", "我的"];
+  static const HOME_TAB_TITLES = const ["首页", "项目", "公众号", "我的"];
   /**
    * 底部正常情况下按钮
    */
@@ -32,3 +32,4 @@ class TabConfig{
   static const double width = 30.0, height = 30.0;
 
 }
+

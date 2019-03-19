@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_wheel/constants/constant.dart' show AppColors,TabConfig;
-
+import 'package:flutter_wheel/home/pages/main_page.dart';
 class NavigationIconView {
   final String _title; //
   final Widget _activeIcon; //选中显示图片
@@ -39,7 +39,7 @@ class _MainHomePageState extends State<MainHomePage> {
     _pageController = new PageController(
         initialPage: _currentIndex, keepPage: true, viewportFraction: 1.0);
     _pages = [
-      Container(color: Colors.white),
+      MainPage(),
       Container(color: Colors.blue),
       Container(color: Colors.yellow),
       Container(color: Colors.green),

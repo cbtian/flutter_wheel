@@ -20,12 +20,17 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.2
   flutter_screenutil: ^0.4.2
+  dio: ^2.1.0 #latest version
+## Your other regular dependencies here
+#  json_annotation: ^2.0.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
-
+## Your other dev_dependencies here
+#  build_runner: ^1.0.0
+#  json_serializable: ^2.0.0
 # For information on the generic Dart part of this file, see the
 # following page: https://www.dartlang.org/tools/pub/pubspec
 
