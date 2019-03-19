@@ -34,7 +34,7 @@ For help getting started with Flutter, view our online
 - [Flutter_Wheel](https://github.com/cbtian/flutter_wheel)
 
 #### 机型适配
-[flutter_screenutil](https://github.com/OpenFlutter/flutter_ScreenUtil)
+- [flutter_screenutil](https://github.com/OpenFlutter/flutter_ScreenUtil)
 
 #### 细节优化 
 - 沉浸式状态栏的实现
