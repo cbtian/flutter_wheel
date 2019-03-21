@@ -7,6 +7,7 @@ class HttpUtils {
   static const String FormatUrl = "json";
   static const String Articles = "article/list/";
   static const String Banner = "banner/";
+  static const String Tree = "project/tree/";
 
   static const String GET = 'GET';
   static const String POST = 'POST';

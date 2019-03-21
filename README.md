@@ -23,12 +23,24 @@ For help getting started with Flutter, view our online
 >- [BannerView1](https://github.com/yangxiaoweihn/BannerView)
 >- [BannerView2](https://github.com/zhangruiyu/)
   
+####Flutter_refresh
+> 这里是开源的上拉刷新和下拉加载更多Widget
+> - [flutter_refresh](https://github.com/best-flutter/flutter_refresh) 
+> - [图解 ListView 下拉刷新与上拉加载 (一)【flutter_refresh】](https://www.jianshu.com/p/023b5428aece) 
+> - [flutter_refresh 0.0.2](https://pub.flutter-io.cn/packages/flutter_refresh) 
+
+####Flutter TabBar
+>参考博文
+>[Flutter之TabBar组件](https://www.jianshu.com/p/fddac387cbe5)  
 #### 推荐几个学习Flutter的网站
 - [Futter中文网](https://flutterchina.club/)
 - [Flutter 社区中文资源](https://flutter-io.cn/)
 - [Flutter Packages](https://pub.dartlang.org/flutter/)
 - [Flutter 中文开发者社区开源项目](https://github.com/flutterchina)
-
+- [掘金Flutter社区](https://juejin.im/tag/Flutter?utm_source=flutterchina&utm_medium=word&utm_content=btn&utm_campaign=q3_website)
+- [一个很棒的Flutter学习资源列表](http://www.devio.org/2018/09/09/awesome-flutter/)
+#### 一些比较优秀的Flutter在GitHub上的开源项目
+- [Flutter-learning](https://github.com/AweiLoveAndroid/Flutter-learning)
 
 #### 个人开源网站
 - [Flutter_Wheel](https://github.com/cbtian/flutter_wheel)
