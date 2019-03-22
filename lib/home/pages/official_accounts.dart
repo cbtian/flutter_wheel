@@ -1,19 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_wheel/network/httputil.dart';
 import 'package:flutter_wheel/network/Tree.dart';
+import 'package:flutter_wheel/network/httputil.dart';
 import 'package:flutter_wheel/home/common_refresh_listview.dart';
-
-class ProjectPage extends StatefulWidget {
+class OfficialAccount extends StatefulWidget {
   @override
-  _ProjectPageState createState() => _ProjectPageState();
+  _OfficialAccountState createState() => _OfficialAccountState();
 }
 
-class _ProjectPageState extends State<ProjectPage> {
+class _OfficialAccountState extends State<OfficialAccount> {
   TreeBean treeBean;
   List<Tab> mTabs = [];
 
   _getTabBarTitles() {
-    var url = HttpUtils.getUrl(article: HttpUtils.ProjectTree);
+    var url = HttpUtils.getUrl(article: HttpUtils.Wxarticle);
     HttpController.getData(url, (data) {
       print(data.toString());
       if (!mounted) return;
@@ -34,43 +33,39 @@ class _ProjectPageState extends State<ProjectPage> {
     }
     return tabs;
   }
-
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
     _getTabBarTitles();
   }
-
   @override
   Widget build(BuildContext context) {
     return treeBean == null ? Container():
-     DefaultTabController(
+    DefaultTabController(
         length: mTabs == null ? 0 : mTabs.length,
         child: Scaffold(
-          appBar: AppBar(
-            title: Text("项目"),
-            centerTitle: true,
-            bottom: TabBar(
-              tabs: mTabs,
-              isScrollable: true,
-              indicatorColor: Colors.red,
-              indicatorSize: TabBarIndicatorSize.tab,
-              labelColor: Colors.red,
-              unselectedLabelColor: Colors.black,
-              indicatorWeight: 5.0,
-              labelStyle: TextStyle(height: 2),
+            appBar: AppBar(
+              title: Text("公众号"),
+              centerTitle: true,
+              bottom: TabBar(
+                tabs: mTabs,
+                isScrollable: true,
+                indicatorColor: Colors.red,
+                indicatorSize: TabBarIndicatorSize.tab,
+                labelColor: Colors.red,
+                unselectedLabelColor: Colors.black,
+                indicatorWeight: 5.0,
+                labelStyle: TextStyle(height: 2),
+              ),
+              backgroundColor: Colors.blue,
             ),
-            backgroundColor: Colors.blue,
-          ),
-          body:
-          TabBarView(
+            body:
+            TabBarView(
               children:
               treeBean.data.map((TreeContent tab) {
-                return new Center(child: CommonRefreshLv(hostStr:HttpUtils.Projects,params:{'cid':tab.id.toString()}));
+                return new Center(child: CommonRefreshLv(hostStr:"wxarticle/list/"+tab.id.toString()+"/"));
               }).toList(),
-        )));
+            )));
   }
 }
-
-

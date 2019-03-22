@@ -9,11 +9,11 @@ import 'package:flutter_wheel/network/article.dart';
  */
 class CommonRefreshLv extends StatefulWidget {
   Map<String, String> params;
-
-  CommonRefreshLv({this.params});
+  String hostStr; //请求的数据类别
+  CommonRefreshLv({this.hostStr,this.params}) : assert(hostStr != null);
 
   @override
-  CommonRefreshLvState createState() => CommonRefreshLvState(params: params);
+  CommonRefreshLvState createState() => CommonRefreshLvState(hostStr:hostStr,params: params);
 }
 
 class CommonRefreshLvState extends State<CommonRefreshLv>
@@ -23,11 +23,11 @@ class CommonRefreshLvState extends State<CommonRefreshLv>
   List<Article> _networkResult = [];
 
   Map<String, String> params;
-
-  CommonRefreshLvState({this.params});
+  String hostStr; //请求的数据类别
+  CommonRefreshLvState({this.hostStr, this.params}) : assert(hostStr != null);
 
   _getPageData() async {
-    var url = HttpUtils.getUrl(article: HttpUtils.Articles, index: _index);
+    var url = HttpUtils.getUrl(article: hostStr, index: _index);
     HttpController.getData(url, (data) {
       if (!mounted) return;
       setState(() {

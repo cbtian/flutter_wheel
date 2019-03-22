@@ -6,8 +6,10 @@ class HttpUtils {
   static const String BaseUrl = "https://www.wanandroid.com/";
   static const String FormatUrl = "json";
   static const String Articles = "article/list/";
+  static const String Projects = "project/list/";
   static const String Banner = "banner/";
-  static const String Tree = "project/tree/";
+  static const String ProjectTree= "project/tree/";
+  static const String Wxarticle = "wxarticle/chapters/";
 
   static const String GET = 'GET';
   static const String POST = 'POST';
