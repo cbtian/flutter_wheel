@@ -10,8 +10,10 @@ For help getting started with Flutter, view our online
 #### 项目介绍
 >- 搭建底部BottomNavigationBar框架，并联动pageview使用中只需要更lib/constants/constant.dart中TabConfig 内的 HOME_TAB_TITLES 、HOME_TAB_NORMALICON、HOME_TAB_ACTIVEICON 这仨个数据中的内容替换成自己想要的就行
 >- 本项目中所有网络请求均来自于[玩Android](https://www.wanandroid.com/blog/show/2)
+#### 项目效果图
+> ![flutter_wheel项目](./screenshot/flutter_wheel项目.gif)
 
-#### 网络开源库
+
 >这里实用的是Flutter中文网开源的项目[Dio](https://github.com/flutterchina/dio)
 >另外附两个简书上面对该开源项目的封装 
 >- [强大的Flutter Http请求开源库-dio](https://www.jianshu.com/p/bd4c2dc5e97f)
@@ -59,3 +61,5 @@ For help getting started with Flutter, view our online
 ````
 #### 问题记录
 - [使用TabBarView & TabBar遇到一个问题：tab切换的时候，每次都会执行initState](https://www.colabug.com/3162835.html)
+
+
