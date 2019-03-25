@@ -13,7 +13,6 @@ For help getting started with Flutter, view our online
 #### 项目效果图
 > ![flutter_wheel项目](./screenshot/flutter_wheel项目.gif)
 
-
 >这里实用的是Flutter中文网开源的项目[Dio](https://github.com/flutterchina/dio)
 >另外附两个简书上面对该开源项目的封装 
 >- [强大的Flutter Http请求开源库-dio](https://www.jianshu.com/p/bd4c2dc5e97f)
@@ -25,13 +24,13 @@ For help getting started with Flutter, view our online
 >- [BannerView1](https://github.com/yangxiaoweihn/BannerView)
 >- [BannerView2](https://github.com/zhangruiyu/)
   
-####Flutter_refresh
+#### Flutter_refresh
 > 这里是开源的上拉刷新和下拉加载更多Widget
 > - [flutter_refresh](https://github.com/best-flutter/flutter_refresh) 
 > - [图解 ListView 下拉刷新与上拉加载 (一)【flutter_refresh】](https://www.jianshu.com/p/023b5428aece) 
 > - [flutter_refresh 0.0.2](https://pub.flutter-io.cn/packages/flutter_refresh) 
 
-####Flutter TabBar
+#### Flutter TabBar
 >参考博文
 >[Flutter之TabBar组件](https://www.jianshu.com/p/fddac387cbe5)  
 #### 推荐几个学习Flutter的网站
