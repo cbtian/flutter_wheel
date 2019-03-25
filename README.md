@@ -58,6 +58,13 @@ For help getting started with Flutter, view our online
     SystemChrome.setSystemUIOverlayStyle(systemUiOverlayStyle);
  }
 ````
+- 去除appbar的阴影
+```
+    appBar: AppBar(
+        elevation: 0.0,//去阴影
+      )
+```
+
 #### 问题记录
 - [使用TabBarView & TabBar遇到一个问题：tab切换的时候，每次都会执行initState](https://www.colabug.com/3162835.html)
 
