@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_wheel/network/article.dart'
-    show Article, ArticleBean;
+import 'package:flutter_wheel/network/article.dart' show Article, ArticleBean;
 import 'package:flutter_wheel/banner/banner_view.dart' show BannerView;
 import 'package:flutter_wheel/network/banners.dart';
 import 'package:flutter_wheel/network/httputil.dart';
 import 'package:flutter_wheel/flutter_refresh/refresh.dart';
+import 'package:flutter_wheel/home/route.dart';
 
 class MainPage extends StatefulWidget {
   @override
@@ -20,7 +20,8 @@ class _MainPageState extends State<MainPage>
   List<Article> _networkResult = [];
   BannerBean _bannerBean = new BannerBean();
   int _index = 0;
-   _getMainPageData() async {
+
+  _getMainPageData() async {
     var url = HttpUtils.getUrl(article: HttpUtils.Articles, index: _index);
     HttpController.getData(url, (data) {
       if (!mounted) return;
@@ -34,13 +35,12 @@ class _MainPageState extends State<MainPage>
     });
   }
 
-  Future<Null> _loadMoreData(){
-    return new Future.delayed(new Duration(seconds: 2),(){
+  Future<Null> _loadMoreData() {
+    return new Future.delayed(new Duration(seconds: 2), () {
       setState(() {
         _getMainPageData();
       });
     });
-
   }
 
   _getBannerContent() {
@@ -117,24 +117,35 @@ class _MainPageState extends State<MainPage>
     );
   }
 
-  Future<Null>  _onRefresh() {
-     return new Future.delayed(new Duration(seconds: 2),(){
-       setState(() {
-         _index = 0;
-         _networkResult.clear();
-         _getMainPageData();
-       });
-     });
+  Future<Null> _onRefresh() {
+    return new Future.delayed(new Duration(seconds: 2), () {
+      setState(() {
+        _index = 0;
+        _networkResult.clear();
+        _getMainPageData();
+      });
+    });
+  }
 
-
+  _push( title, url) {
+//    Navigator.pushNamed(context, "routeDemo");
+    Navigator.push(context,new MaterialPageRoute(
+      builder: (context) {
+        return new RouteDemo(
+          title: title,
+          url: url,
+        );
+      },
+    ));
   }
 
   @override
   Widget build(BuildContext context) {
+    super.build(context);
     int size = _networkResult == null ? 0 : _networkResult.length;
     return new Scaffold(
       appBar: AppBar(
-        elevation: 0.0,//去阴影
+        elevation: 0.0, //去阴影
         title: Text("首页"),
         centerTitle: true,
       ),
@@ -150,26 +161,32 @@ class _MainPageState extends State<MainPage>
                 if (index == 0) {
                   return _getBannerView();
                 }
-                return Card(
-                  child: Padding(
-                      padding:
-                          EdgeInsets.all(ScreenUtil.getInstance().setSp(30)),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: <Widget>[
-                          Text(
-                            _networkResult[index - 1].title,
-                            softWrap: true,
-                            style: TextStyle(
-                                fontSize: ScreenUtil.getInstance().setSp(32)),
-                          ),
-                          _getRowView(index - 1),
-                          Text(_networkResult[index - 1].niceDate +
-                              " By作者：" +
-                              _networkResult[index - 1].author),
-                        ],
-                      )),
-                );
+                int tempIndex = index - 1;
+                return GestureDetector(
+                    onTap: (){
+                      _push(_networkResult[tempIndex].title,_networkResult[tempIndex].link);
+                    },
+                    child: Card(
+                      child: Padding(
+                          padding: EdgeInsets.all(
+                              ScreenUtil.getInstance().setSp(30)),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: <Widget>[
+                              Text(
+                                _networkResult[tempIndex].title,
+                                softWrap: true,
+                                style: TextStyle(
+                                    fontSize:
+                                        ScreenUtil.getInstance().setSp(32)),
+                              ),
+                              _getRowView(tempIndex),
+                              Text(_networkResult[tempIndex].niceDate +
+                                  " By作者：" +
+                                  _networkResult[tempIndex].author),
+                            ],
+                          )),
+                    ));
               },
               itemCount: size + 1,
               controller: controller,

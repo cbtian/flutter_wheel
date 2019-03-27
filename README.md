@@ -64,8 +64,10 @@ For help getting started with Flutter, view our online
         elevation: 0.0,//去阴影
       )
 ```
+- listview的item监听是在itemBuild中的widget外面包一层GestureDetector，然后在ontap方法中进行处理逻辑
 
 #### 问题记录
 - [使用TabBarView & TabBar遇到一个问题：tab切换的时候，每次都会执行initState](https://www.colabug.com/3162835.html)
+- [flutter中tabview切换避免重回](https://www.jianshu.com/p/ff81daaad60b)
 
 

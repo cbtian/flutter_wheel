@@ -3,6 +3,7 @@ import 'package:flutter_wheel/flutter_refresh/refresh.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_wheel/network/httputil.dart';
 import 'package:flutter_wheel/network/article.dart';
+import 'package:flutter_wheel/home/route.dart';
 
 /**
  * 自定义刷新Listview
@@ -10,10 +11,11 @@ import 'package:flutter_wheel/network/article.dart';
 class CommonRefreshLv extends StatefulWidget {
   Map<String, String> params;
   String hostStr; //请求的数据类别
-  CommonRefreshLv({this.hostStr,this.params}) : assert(hostStr != null);
+  CommonRefreshLv({this.hostStr, this.params}) : assert(hostStr != null);
 
   @override
-  CommonRefreshLvState createState() => CommonRefreshLvState(hostStr:hostStr,params: params);
+  CommonRefreshLvState createState() =>
+      CommonRefreshLvState(hostStr: hostStr, params: params);
 }
 
 class CommonRefreshLvState extends State<CommonRefreshLv>
@@ -100,6 +102,18 @@ class CommonRefreshLvState extends State<CommonRefreshLv>
     _getPageData();
   }
 
+  _push(title, url) {
+//    Navigator.pushNamed(context, "routeDemo");
+    Navigator.push(context, new MaterialPageRoute(
+      builder: (context) {
+        return new RouteDemo(
+          title: title,
+          url: url,
+        );
+      },
+    ));
+  }
+
   @override
   Widget build(BuildContext context) {
     int size = _networkResult == null ? 0 : _networkResult.length;
@@ -113,26 +127,31 @@ class CommonRefreshLvState extends State<CommonRefreshLv>
             child: ListView.builder(
               physics: physics,
               itemBuilder: (BuildContext context, int index) {
-                return Card(
-                  child: Padding(
-                      padding:
-                          EdgeInsets.all(ScreenUtil.getInstance().setSp(30)),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: <Widget>[
-                          Text(
-                            _networkResult[index].title,
-                            softWrap: true,
-                            style: TextStyle(
-                                fontSize: ScreenUtil.getInstance().setSp(32)),
-                          ),
-                          _getRowView(index),
-                          Text(_networkResult[index].niceDate +
-                              " By作者：" +
-                              _networkResult[index].author),
-                        ],
-                      )),
-                );
+                return GestureDetector(
+                  onTap: () {
+                    _push(_networkResult[index].title,
+                        _networkResult[index].link);
+                  },
+                  child: Card(
+                    child: Padding(
+                        padding:
+                        EdgeInsets.all(ScreenUtil.getInstance().setSp(30)),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                            Text(
+                              _networkResult[index].title,
+                              softWrap: true,
+                              style: TextStyle(
+                                  fontSize: ScreenUtil.getInstance().setSp(32)),
+                            ),
+                            _getRowView(index),
+                            Text(_networkResult[index].niceDate +
+                                " By作者：" +
+                                _networkResult[index].author),
+                          ],
+                        )),
+                  ),);
               },
               itemCount: size,
               controller: controller,

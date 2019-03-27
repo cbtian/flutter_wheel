@@ -8,7 +8,8 @@ class ProjectPage extends StatefulWidget {
   _ProjectPageState createState() => _ProjectPageState();
 }
 
-class _ProjectPageState extends State<ProjectPage> {
+class _ProjectPageState extends State<ProjectPage>
+    with AutomaticKeepAliveClientMixin {
   TreeBean treeBean;
   List<Tab> mTabs = [];
 
@@ -44,33 +45,38 @@ class _ProjectPageState extends State<ProjectPage> {
 
   @override
   Widget build(BuildContext context) {
-    return treeBean == null ? Container():
-     DefaultTabController(
-        length: mTabs == null ? 0 : mTabs.length,
-        child: Scaffold(
-          appBar: AppBar(
-            title: Text("项目"),
-            centerTitle: true,
-            bottom: TabBar(
-              tabs: mTabs,
-              isScrollable: true,
-              indicatorColor: Colors.red,
-              indicatorSize: TabBarIndicatorSize.tab,
-              labelColor: Colors.red,
-              unselectedLabelColor: Colors.black,
-              indicatorWeight: 5.0,
-              labelStyle: TextStyle(height: 2),
-            ),
-            backgroundColor: Colors.blue,
-          ),
-          body:
-          TabBarView(
-              children:
-              treeBean.data.map((TreeContent tab) {
-                return new Center(child: CommonRefreshLv(hostStr:HttpUtils.Projects,params:{'cid':tab.id.toString()}));
-              }).toList(),
-        )));
+    super.build(context);
+    return treeBean == null
+        ? Container()
+        : DefaultTabController(
+            length: mTabs == null ? 0 : mTabs.length,
+            child: Scaffold(
+                appBar: AppBar(
+                  title: Text("项目"),
+                  centerTitle: true,
+                  bottom: TabBar(
+                    tabs: mTabs,
+                    isScrollable: true,
+                    indicatorColor: Colors.red,
+                    indicatorSize: TabBarIndicatorSize.tab,
+                    labelColor: Colors.red,
+                    unselectedLabelColor: Colors.black,
+                    indicatorWeight: 5.0,
+                    labelStyle: TextStyle(height: 2),
+                  ),
+                  backgroundColor: Colors.blue,
+                ),
+                body: TabBarView(
+                  children: treeBean.data.map((TreeContent tab) {
+                    return new Center(
+                        child: CommonRefreshLv(
+                            hostStr: HttpUtils.Projects,
+                            params: {'cid': tab.id.toString()}));
+                  }).toList(),
+                )));
   }
+
+  @override
+  // TODO: implement wantKeepAlive
+  bool get wantKeepAlive => true;
 }
-
-

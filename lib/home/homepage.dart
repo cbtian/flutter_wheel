@@ -4,6 +4,7 @@ import 'package:flutter_wheel/constants/constant.dart' show AppColors,TabConfig;
 import 'package:flutter_wheel/home/pages/main_page.dart';
 import 'package:flutter_wheel/home/pages/project.dart';
 import 'package:flutter_wheel/home/pages/official_accounts.dart';
+import 'package:flutter_wheel/home/pages/mine_page.dart';
 class NavigationIconView {
   final String _title; //
   final Widget _activeIcon; //选中显示图片
@@ -44,7 +45,7 @@ class _MainHomePageState extends State<MainHomePage> {
       MainPage(),
       ProjectPage(),
       OfficialAccount(),
-      Container(color: Colors.green),
+      MinePage(),
     ];
   }
 

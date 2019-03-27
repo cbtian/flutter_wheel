@@ -7,7 +7,7 @@ class OfficialAccount extends StatefulWidget {
   _OfficialAccountState createState() => _OfficialAccountState();
 }
 
-class _OfficialAccountState extends State<OfficialAccount> {
+class _OfficialAccountState extends State<OfficialAccount> with AutomaticKeepAliveClientMixin{
   TreeBean treeBean;
   List<Tab> mTabs = [];
 
@@ -41,6 +41,7 @@ class _OfficialAccountState extends State<OfficialAccount> {
   }
   @override
   Widget build(BuildContext context) {
+    super.build(context);
     return treeBean == null ? Container():
     DefaultTabController(
         length: mTabs == null ? 0 : mTabs.length,
@@ -68,4 +69,8 @@ class _OfficialAccountState extends State<OfficialAccount> {
               }).toList(),
             )));
   }
+
+  @override
+  // TODO: implement wantKeepAlive
+  bool get wantKeepAlive => true;
 }
