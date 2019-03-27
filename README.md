@@ -71,3 +71,11 @@ For help getting started with Flutter, view our online
 - [flutter中tabview切换避免重回](https://www.jianshu.com/p/ff81daaad60b)
 
 
+
+#### IOS 问题
+引入新库之后没有执行pod命令造成不能导入成功问题
+```
+pod update --verbose --no-repo-update
+pod install --verbose --no-repo-update
+
+```

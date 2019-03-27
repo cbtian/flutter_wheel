@@ -111,7 +111,7 @@ class _MainPageState extends State<MainPage>
       child: new BannerView(
         data: banners,
         ontap: (index) {
-          print("点击第$index个控件");
+          _push(_bannerBean.data[index].title,_bannerBean.data[index].url);
         },
       ),
     );
