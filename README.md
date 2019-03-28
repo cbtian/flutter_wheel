@@ -79,3 +79,44 @@ pod update --verbose --no-repo-update
 pod install --verbose --no-repo-update
 
 ```
+[经验：Flutter项目IOS真机部署及问题](https://www.jianshu.com/p/69e1efc2fc55)
+[Error connecting to the service protocol: HttpException: , uri = http://127.0.0.1:1050/ws](https://blog.csdn.net/developer_zhao/article/details/88592852)
+[flutter 运行ios真机报错](https://blog.csdn.net/developer_zhao/article/details/83688033)
+####ios真机在集成 flutter_webview_plugin  使用webview的时候出现崩溃问题  
+- 问题描述 
+> 1、集成完 flutter_webview_plugin 0.2.1 版本后，在Android真机和ios模拟器上运行都没有问题，但是在ios系统真机测试的时候
+> 出现闪退问题
+- 解决方案
+> 寻找结果发现是flutter_webview_plugin这个插件framework层出了问题，后查看文档[flutter_webview_plugin](https://pub.dartlang.org/packages/flutter_webview_plugin#-changelog-tab-)
+> 里面有更新日志就有修复这个ios崩溃问题
+> - Fixes rect capture issue. Ensures WebView remains in the correct place on screen even when keyboard appears.
+> - == Fixed iOS crash issue with Flutter >= 0.10.2.==
+> - Added new clearCookies feature.
+> - Added support for hidden and initialChild feature to show page loading view.
+> - Added supportMultipleWindows: enables Multiple Window Support on Android.
+> - Added appCacheEnabled: enables Application Caches API on Android.
+> - Added allowFileURLs: allows file:// local file URLs.
+> - iOS Now supports: reload, goBack, and goForward.
+> - iOS Bug fix didFailNavigation #77
+> - Updated Android compileSdkVersion to 27 matching offical Flutter plugins.
+> - Fixed Android reloadUrl so settings are not cleared.
+> - Enabled compatible Mixed Content Mode on Android.
+> 后将插件版本升级至0.3.0 解决崩溃问题
+
+- 问题描述
+> 上述崩溃问题解决后又出现 No named parameter with the name 'resizeToAvoidBottomInset' 的问题
+- 解决方案
+> 查找Scaffold.dart文件中确实没有找到这个属性值，后将flutter进行升级，问题解决
+> flutter 升级方法 在项目的主目录下（有pubspec.dart文件的目录）执行 
+  flutter upgrade 命令，等待执行文成即可
+
+
+
+
+
+
+
+
+
+
+
