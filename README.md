@@ -109,7 +109,7 @@ pod install --verbose --no-repo-update
 - 解决方案
 > 查找Scaffold.dart文件中确实没有找到这个属性值，后将flutter进行升级，问题解决
 > flutter 升级方法 在项目的主目录下（有pubspec.dart文件的目录）执行 
-  flutter upgrade 命令，等待执行文成即可
+  flutter upgrade 命令，等待执行完成即可
 
 
 
