@@ -46,6 +46,16 @@ For help getting started with Flutter, view our online
 #### 个人开源网站
 - [Flutter_Wheel](https://github.com/cbtian/flutter_wheel)
 
+#### 个人博客连接
+- 简书
+  - [Flutter 学习 - 开篇](https://www.jianshu.com/p/f739c2287473)
+  - [Flutter 学习- 基础框架](https://www.jianshu.com/p/897356de9b8b)
+  - [Flutter 学习-网络请求和数据解析](https://www.jianshu.com/p/711c2d5b8f86)
+  
+- csdn 
+  - [Flutter 学习 - 开篇](https://blog.csdn.net/wanzhuanit/article/details/88892785)
+  - [Flutter 学习- 基础框架](https://blog.csdn.net/wanzhuanit/article/details/88920257)
+  - [Flutter 学习-网络请求和数据解析](https://blog.csdn.net/wanzhuanit/article/details/88941874)
 #### 机型适配
 - [flutter_screenutil](https://github.com/OpenFlutter/flutter_ScreenUtil)
 
