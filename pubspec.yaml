@@ -57,6 +57,7 @@ flutter:
     - assets/images/main/tab/ic_tab_category_selected.png
     - assets/images/main/tab/ic_tab_mine_no_selected.png
     - assets/images/main/tab/ic_tab_mine_selected.png
+    - assets/images/flutter_wheel.jpeg
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.io/assets-and-images/#resolution-aware.
 

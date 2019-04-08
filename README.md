@@ -12,6 +12,7 @@ For help getting started with Flutter, view our online
 >- 本项目中所有网络请求均来自于[玩Android](https://www.wanandroid.com/blog/show/2)
 #### 项目效果图
 > ![flutter_wheel项目](./screenshot/flutter_wheel项目.gif)
+> ![我的界面思维导图](./screenshot/mine.jpg)
 
 >这里实用的是Flutter中文网开源的项目[Dio](https://github.com/flutterchina/dio)
 >另外附两个简书上面对该开源项目的封装 
