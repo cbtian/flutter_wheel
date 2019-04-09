@@ -8,11 +8,15 @@ class LoginView extends StatefulWidget {
 class _LoginViewState extends State<LoginView> {
   TextEditingController phoneEditingController = new TextEditingController();
   TextEditingController pswEditingController = new TextEditingController();
+  _goBack(){
+    Navigator.of(context).pop("数据带回去");
+  }
   @override
   Widget build(BuildContext context) {
     double width = ScreenUtil.screenWidthDp * 2 / 3;
     return Scaffold(
-      appBar: AppBar(title: Text("登陆")),
+      appBar: AppBar(title: Text("登陆")
+      ,centerTitle: true,),
       body: Container(child: Card(
           child: Padding(
             padding: EdgeInsets.all(10),
@@ -41,7 +45,7 @@ class _LoginViewState extends State<LoginView> {
                 RaisedButton(
                   color: Colors.red,
                   onPressed: () {
-                    print("登陆");
+                    _goBack();
                   },
                   child: Container(
                     child: Text("登陆",style: TextStyle(color: Colors.white,fontSize: ScreenUtil.getInstance().setSp(36)),),
